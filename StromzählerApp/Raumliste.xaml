@@ -1,0 +1,65 @@
+﻿<Window x:Class="StromzählerApp.Raumliste"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StromzählerApp"
+        mc:Ignorable="d"
+        Title="Raumliste" Height="450" Width="800">
+    <Canvas>
+        <Menu VerticalAlignment="Top">
+            <MenuItem Header="Optionen"
+                      Background="LightBlue"
+                      BorderBrush="Black">
+                <MenuItem Header="Zähler"
+                          Height="20">
+                    <MenuItem x:Name="neuItem"
+                              Header="Neu"
+                              Click="neuItem_Click"
+                              Height="20"/>
+                    <MenuItem Header="Bearbeiten"
+                              Height="20"/>
+                    <MenuItem Header="Löschen"
+                              Height="20"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Filter">
+                <MenuItem Header="Unterzähler"/>
+                <MenuItem Header="Raum"/>
+                <MenuItem Header="Etage"/>
+                <MenuItem Header="Gebäude"/>
+                <MenuItem Header="Stadt"/>
+                <MenuItem Header="PLZ"/>
+                <MenuItem Header="Straße"/>
+                <MenuItem Header="Hausnummer"/>
+                <MenuItem Header="Raum ID"/>
+            </MenuItem>
+        </Menu>
+        <DataGrid x:Name="datalist"
+                  Canvas.Top="20"
+                  Height="400">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Unterzähler ID"/>
+                <DataGridTextColumn Header="PLZ"/>
+                <DataGridTextColumn Header="Ort"/>
+                <DataGridTextColumn Header="Straße"/>
+                <DataGridTextColumn Header="Hausnummer"/>
+                <DataGridTextColumn Header="Gebäude"/>
+                <DataGridTextColumn Header="Etage"/>
+                <DataGridTextColumn Header="Raum"/>
+                <DataGridTextColumn Header="Verbrauch"/>
+                <DataGridTextColumn Header="Kosten"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="zurueckbtn"
+                Width="100"
+                Height="30"
+                FontSize="20"
+                FontWeight="Bold"
+                Foreground="Black"
+                Background="LightGray"
+                Canvas.Top="380"
+                Canvas.Left="600" Click="zurueckbtn_Click">
+            Zurück</Button>
+    </Canvas>
+</Window>
